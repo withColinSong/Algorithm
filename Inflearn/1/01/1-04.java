@@ -14,6 +14,31 @@ public class Main {
 		return answer;
 	}
 	
+    // 방법 2
+    public static ArrayList<String> solutionTwo(int n, String[] str) {
+		ArrayList<String> answer = new ArrayList<>();
+		
+		for(String x : str) {
+			int lt = 0;
+			int rt = x.length()-1;
+			
+			char[] c = x.toCharArray();
+			
+			while(lt < rt) {
+				char temp = c[lt];
+				c[lt] = c[rt];
+				c[rt] = temp;
+				lt++;
+				rt--;
+			}
+			
+			String temp = String.valueOf(c);
+			answer.add(temp);
+		}
+	
+		return answer;
+	}
+
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
@@ -27,6 +52,10 @@ public class Main {
 		}
 		
 		for(String x : solution(num, strArray)) {
+			System.out.println(x);
+		}
+
+        for(String x : solutionTwo(num, strArray)) {
 			System.out.println(x);
 		}
 		
