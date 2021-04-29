@@ -4,7 +4,7 @@ public class Main {
 		
 		for(int i=0; i<str.length(); i++) {
 			char c = str.charAt(i);
-			if(47 < c && c < 57) {
+			if(48 <= c && c <= 57) {
 				answer += c;
 			}
 		}
